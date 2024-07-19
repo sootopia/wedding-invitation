@@ -31,22 +31,15 @@
        tab-size: 4;
 }
 
-::-moz-selection {
-  background-color: #a5d8ff;
-}
-
-::selection {
-  background-color: #a5d8ff;
-}
-
 html,
 body {
   height: 100%;
 }
 
 body {
-  font-family: "Pretendard", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Eulyoo1945", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
+  background-color: #efefef;
 }
 
 img,
@@ -92,4 +85,8 @@ ol {
 .font-playwrite {
   font-family: "Playwrite CU", cursive;
   font-optical-sizing: auto;
+}
+
+.font-pr {
+  font-family: "Pretendard", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif !important;
 }
