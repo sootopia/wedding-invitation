@@ -1,8 +1,8 @@
 <template>
   <section class="hero__section">
-    <div class="container px-5">
+    <div class="container mx-auto px-5">
       <figure class="mb-10">
-        <img class="w-full" src="//via.placeholder.com/342x513" alt="" />
+        <img class="w-full" src="/static/images/hero_img.webp" alt="Wedding Day!" />
         <svg
           width="261"
           height="58"
