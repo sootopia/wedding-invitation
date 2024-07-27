@@ -90,5 +90,10 @@ export default {
   &.button__secondary {
     background-color: $light-beige;
   }
+
+  &.button__default {
+    border-color: #dee2e6;
+    background-color: $white;
+  }
 }
 </style>
