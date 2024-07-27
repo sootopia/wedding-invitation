@@ -14,7 +14,7 @@
       </div>
 
       <div class="hero__wrapper">
-        <figure ref="wideImgRef">
+        <figure class="-mx-5" ref="wideImgRef">
           <img class="w-full" src="/static/images/invitation_img.webp" alt="" />
         </figure>
 
@@ -86,7 +86,7 @@ export default {
         animation: timeline,
         trigger: sectionRef.value,
         start: 'top 60%',
-        end: '+=1100',
+        end: '+=900',
         pin: false,
         scrub: true,
       });
@@ -116,7 +116,6 @@ export default {
     margin-top: 80px;
 
     figure {
-      border-radius: 20px;
       overflow: hidden;
     }
   }
