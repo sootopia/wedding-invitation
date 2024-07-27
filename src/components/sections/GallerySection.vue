@@ -65,7 +65,7 @@
 
 <script>
 import CommonHeader from '@/components/CommonHeader.vue';
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 
 export default {
   components: {
@@ -177,6 +177,7 @@ export default {
 <style lang="scss" scoped>
 .gallery__section {
   padding-top: 80px;
+  padding-bottom: 80px;
 
   .grid__wrapper {
     position: relative;
