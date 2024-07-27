@@ -3,6 +3,7 @@
     <HeroSection />
     <InvitationSection />
     <GallerySection />
+    <CalendarSection />
   </div>
 </template>
 
@@ -11,12 +12,14 @@ import { ref, onMounted } from 'vue';
 import HeroSection from '@/components/sections/HeroSection.vue';
 import InvitationSection from '@/components/sections/InvitationSection.vue';
 import GallerySection from '@/components/sections/GallerySection.vue';
+import CalendarSection from '@/components/sections/CalendarSection.vue';
 
 export default {
   components: {
     HeroSection,
     InvitationSection,
     GallerySection,
+    CalendarSection,
   },
   setup() {},
 };
