@@ -38,7 +38,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         svgRef.value.classList.add('active');
-      }, 500);
+      }, 100);
     });
 
     return { svgRef };
