@@ -28,6 +28,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    size: {
+      type: String,
+      default: '',
+      validator: (value) => ['sm', ''].includes(value),
+    },
   },
   setup(props, { emit }) {
     const buttonClasses = computed(() => {
@@ -37,6 +42,7 @@ export default {
         button__secondary: props.variant === 'secondary',
         button__tertiary: props.variant === 'tertiary',
         button__default: props.variant === 'default',
+        button__small: props.size === 'sm',
         button__disabled: props.disabled,
         'font-bold': props.bold,
       };
@@ -75,15 +81,17 @@ export default {
     transition: opacity 0.2s;
   }
 
-  &:hover {
-    transform: scale(1.02);
-  }
+  &:not(.button__small) {
+    &:hover {
+      transform: scale(1.02);
+    }
 
-  &:active {
-    transform: scale(0.98);
+    &:active {
+      transform: scale(0.98);
 
-    &::after {
-      opacity: 1;
+      &::after {
+        opacity: 1;
+      }
     }
   }
 
@@ -94,6 +102,12 @@ export default {
   &.button__default {
     border-color: #dee2e6;
     background-color: $white;
+  }
+
+  &.button__small {
+    font-size: 13px;
+    height: 40px;
+    border-radius: 10px;
   }
 }
 </style>
