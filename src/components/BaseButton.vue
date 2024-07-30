@@ -28,10 +28,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    medium: {
+      type: Boolean,
+      default: false,
+    },
     size: {
       type: String,
       default: '',
-      validator: (value) => ['sm', ''].includes(value),
+      validator: (value) => ['sm', 'xs', ''].includes(value),
     },
   },
   setup(props, { emit }) {
@@ -42,9 +46,13 @@ export default {
         button__secondary: props.variant === 'secondary',
         button__tertiary: props.variant === 'tertiary',
         button__default: props.variant === 'default',
+        button__gray: props.variant === 'gray',
+        button__kakao: props.variant === 'kakao',
         button__small: props.size === 'sm',
+        button__xsmall: props.size === 'xs',
         button__disabled: props.disabled,
         'font-bold': props.bold,
+        'font-medium': props.medium,
       };
     });
 
@@ -81,7 +89,7 @@ export default {
     transition: opacity 0.2s;
   }
 
-  &:not(.button__small) {
+  &:not(.button__small):not(.button__xsmall) {
     &:hover {
       transform: scale(1.02);
     }
@@ -104,10 +112,27 @@ export default {
     background-color: $white;
   }
 
+  &.button__gray {
+    color: #666;
+    background-color: #f1f3f5;
+  }
+
+  &.button__kakao {
+    color: $black;
+    background-color: #ffeb00;
+  }
+
   &.button__small {
-    font-size: 13px;
     height: 40px;
+    font-size: 13px;
     border-radius: 10px;
+  }
+
+  &.button__xsmall {
+    height: 30px;
+    font-size: 12px;
+    column-gap: 5px;
+    border-radius: 8px;
   }
 }
 </style>
