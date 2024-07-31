@@ -22,7 +22,8 @@ export default {
     variant: {
       type: String,
       default: 'default',
-      validator: (value) => ['primary', 'secondary', 'tertiary', 'default'].includes(value),
+      validator: (value) =>
+        ['primary', 'secondary', 'tertiary', 'default', 'gray', 'kakao'].includes(value),
     },
     bold: {
       type: Boolean,
