@@ -87,26 +87,30 @@ export default {
       ],
       [
         {
-          accountBank: '하나은행',
-          accountNumber: '123-456789-0000',
+          accountBank: '신한은행',
+          accountNumber: '110-503-912466',
           accountHolder: '신부 아버지 정운천',
           kakaoLink: 'https://link.kakaopay.com/_/UPVaAoE',
         },
         {
-          accountBank: '하나은행',
-          accountNumber: '123-456789-0000',
+          accountBank: '농협은행',
+          accountNumber: '302-0605-5824-41',
           accountHolder: '신부 어머니 신수경',
           kakaoLink: 'https://link.kakaopay.com/_/UPVaAoE',
         },
         {
-          accountBank: '하나은행',
-          accountNumber: '123-456789-0000',
+          accountBank: '카카오뱅크',
+          accountNumber: '3333-06-3098908',
           accountHolder: '신부 정예솔',
           kakaoLink: 'https://link.kakaopay.com/_/UPVaAoE',
         },
       ],
     ];
 
+    /**
+     * 계좌번호 복사
+     * @param {string} accountNumber 계좌번호
+     */
     const handleCopy = (accountNumber) => {
       navigator.clipboard.writeText(accountNumber).then(() => {
         openAlert({
