@@ -1,5 +1,5 @@
 <template>
-  <div class="accordion">
+  <div :class="accordionClass">
     <button class="accordion__header" @click="toggle">
       <slot name="header"></slot>
     </button>
@@ -17,20 +17,37 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 export default {
   setup() {
     const isOpen = ref(false);
+    const accordionClass = computed(() => {
+      return {
+        accordion: true,
+        'accordion--open': isOpen.value,
+      };
+    });
 
+    /**
+     * 아코디언 토글
+     */
     const toggle = () => {
       isOpen.value = !isOpen.value;
     };
 
+    /**
+     * 트랜지션 실행 전 높이 0으로 만들기
+     * @param {object} el 트랜지션 적용 대상 객체
+     */
     const beforeEnter = (el) => {
       el.style.height = '0';
     };
 
+    /**
+     * 트랜지션 실행시 해당 객체의 높이값 처리
+     * @param {object} el 트랜지션 적용 대상 객체
+     */
     const enter = (el) => {
       const height = el.scrollHeight + 'px';
       el.style.height = height;
@@ -43,6 +60,10 @@ export default {
       );
     };
 
+    /**
+     * 트랜지션 종료 전 높이 0으로 만들기
+     * @param {object} el 트랜지션 적용 대상 객체
+     */
     const beforeLeave = (el) => {
       el.style.height = el.scrollHeight + 'px';
       setTimeout(() => {
@@ -50,6 +71,10 @@ export default {
       });
     };
 
+    /**
+     * 트랜지션 종료시 높이 'auto' 값으로 만들기
+     * @param {object} el 트랜지션 적용 대상 객체
+     */
     const leave = (el) => {
       el.addEventListener(
         'transitionend',
@@ -60,7 +85,7 @@ export default {
       );
     };
 
-    return { isOpen, toggle, beforeEnter, enter, beforeLeave, leave };
+    return { isOpen, accordionClass, toggle, beforeEnter, enter, beforeLeave, leave };
   },
 };
 </script>
@@ -91,6 +116,7 @@ export default {
       background-size: 100%;
       background-position: center;
       background-repeat: no-repeat;
+      transition: transform 0.3s ease;
     }
   }
 
@@ -101,6 +127,14 @@ export default {
     background-color: $white;
     overflow: hidden;
     transition: height 0.3s ease;
+  }
+
+  &--open {
+    .accordion__header {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
   }
 }
 </style>
