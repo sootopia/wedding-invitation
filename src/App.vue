@@ -6,6 +6,7 @@
     <CalendarSection />
     <LocationSection />
     <AccountSection />
+    <FooterLayout />
   </div>
 </template>
 
@@ -17,6 +18,7 @@ import GallerySection from '@/components/sections/GallerySection.vue';
 import CalendarSection from '@/components/sections/CalendarSection.vue';
 import LocationSection from '@/components/sections/LocationSection.vue';
 import AccountSection from '@/components/sections/AccountSection.vue';
+import FooterLayout from '@/components/FooterLayout.vue';
 
 export default {
   components: {
@@ -26,6 +28,7 @@ export default {
     CalendarSection,
     LocationSection,
     AccountSection,
+    FooterLayout,
   },
   setup() {},
 };
@@ -37,7 +40,6 @@ export default {
   max-width: 420px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 80px;
   background-color: $white;
 }
 </style>
