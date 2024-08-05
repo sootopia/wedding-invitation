@@ -6,8 +6,9 @@
       <div class="grid__wrapper" :class="{ expanded: isMoreView }">
         <div class="grid__container columns-2 gap-2">
           <div class="grid__item" v-for="(item, i) of galleryItems" :key="i">
-            <figure>
-              <img :src="item.image" alt="" loading="lazy" />
+            <figure @click="() => openLightbox(i)">
+              <img :src="item" alt="" loading="lazy" />
+              <div class="overlay"></div>
             </figure>
           </div>
         </div>
@@ -61,6 +62,13 @@
       </BaseButton>
     </div>
   </section>
+
+  <vue-easy-lightbox
+    :visible="visibleRef"
+    :imgs="galleryItems"
+    :index="indexRef"
+    @hide="closeLightbox"
+  />
 </template>
 
 <script>
@@ -72,104 +80,53 @@ export default {
     CommonHeader,
   },
   setup() {
-    const galleryItems = ref([
-      {
-        image: '/static/images/gallery01.webp',
-      },
-      {
-        image: '/static/images/gallery02.webp',
-      },
-      {
-        image: '/static/images/gallery03.webp',
-      },
-      {
-        image: '/static/images/gallery04.webp',
-      },
-      {
-        image: '/static/images/gallery05.webp',
-      },
-      {
-        image: '/static/images/gallery06.webp',
-      },
-      {
-        image: '/static/images/gallery07.webp',
-      },
-      {
-        image: '/static/images/gallery08.webp',
-      },
-      {
-        image: '/static/images/gallery09.webp',
-      },
-      {
-        image: '/static/images/gallery10.webp',
-      },
-      {
-        image: '/static/images/gallery11.webp',
-      },
-      {
-        image: '/static/images/gallery12.webp',
-      },
-      {
-        image: '/static/images/gallery13.webp',
-      },
-      {
-        image: '/static/images/gallery14.webp',
-      },
-      {
-        image: '/static/images/gallery15.webp',
-      },
-      {
-        image: '/static/images/gallery16.webp',
-      },
-      {
-        image: '/static/images/gallery17.webp',
-      },
-      {
-        image: '/static/images/gallery18.webp',
-      },
-      {
-        image: '/static/images/gallery19.webp',
-      },
-      {
-        image: '/static/images/gallery20.webp',
-      },
-      {
-        image: '/static/images/gallery21.webp',
-      },
-      {
-        image: '/static/images/gallery22.webp',
-      },
-      {
-        image: '/static/images/gallery23.webp',
-      },
-      {
-        image: '/static/images/gallery24.webp',
-      },
-      {
-        image: '/static/images/gallery25.webp',
-      },
-      {
-        image: '/static/images/gallery26.webp',
-      },
-      {
-        image: '/static/images/gallery27.webp',
-      },
-      {
-        image: '/static/images/gallery28.webp',
-      },
-      {
-        image: '/static/images/gallery29.webp',
-      },
-      {
-        image: '/static/images/gallery30.webp',
-      },
-      {
-        image: '/static/images/gallery31.webp',
-      },
-    ]);
+    const galleryItems = [
+      '/static/images/gallery01.webp',
+      '/static/images/gallery02.webp',
+      '/static/images/gallery03.webp',
+      '/static/images/gallery04.webp',
+      '/static/images/gallery05.webp',
+      '/static/images/gallery06.webp',
+      '/static/images/gallery07.webp',
+      '/static/images/gallery08.webp',
+      '/static/images/gallery09.webp',
+      '/static/images/gallery10.webp',
+      '/static/images/gallery11.webp',
+      '/static/images/gallery12.webp',
+      '/static/images/gallery13.webp',
+      '/static/images/gallery14.webp',
+      '/static/images/gallery15.webp',
+      '/static/images/gallery16.webp',
+      '/static/images/gallery17.webp',
+      '/static/images/gallery18.webp',
+      '/static/images/gallery19.webp',
+      '/static/images/gallery20.webp',
+      '/static/images/gallery21.webp',
+      '/static/images/gallery22.webp',
+      '/static/images/gallery23.webp',
+      '/static/images/gallery24.webp',
+      '/static/images/gallery25.webp',
+      '/static/images/gallery26.webp',
+      '/static/images/gallery27.webp',
+      '/static/images/gallery28.webp',
+      '/static/images/gallery29.webp',
+      '/static/images/gallery30.webp',
+      '/static/images/gallery31.webp',
+    ];
     const isMoreView = ref(false);
+    const visibleRef = ref(false);
+    const indexRef = ref(0);
 
-    return { galleryItems, isMoreView };
+    const openLightbox = (index) => {
+      indexRef.value = index;
+      visibleRef.value = true;
+    };
+
+    const closeLightbox = () => {
+      visibleRef.value = false;
+    };
+
+    return { galleryItems, isMoreView, visibleRef, indexRef, openLightbox, closeLightbox };
   },
 };
 </script>
@@ -212,11 +169,20 @@ export default {
     break-inside: avoid;
 
     figure {
+      position: relative;
       border-radius: 4px;
       overflow: hidden;
+      cursor: pointer;
+
+      .overlay {
+        position: absolute;
+        inset: 0px;
+        z-index: 10;
+      }
 
       img {
-        cursor: pointer;
+        user-select: none;
+        pointer-events: none;
       }
     }
   }
