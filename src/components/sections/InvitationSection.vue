@@ -49,11 +49,16 @@
         </BaseButton>
       </div>
     </div>
+
+    <Teleport to="body">
+      <ContactModal v-if="isModalOpen" @close="handleClose" />
+    </Teleport>
   </section>
 </template>
 
 <script>
 import CommonHeader from '@/components/CommonHeader.vue';
+import ContactModal from '@/components/ContactModal.vue';
 import { ref, onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { CSSPlugin } from 'gsap/CSSPlugin';
@@ -64,14 +69,30 @@ gsap.registerPlugin(CSSPlugin, ScrollTrigger);
 export default {
   components: {
     CommonHeader,
+    ContactModal,
   },
   setup() {
     const sectionRef = ref(null);
     const wideImgRef = ref(null);
+    const isModalOpen = ref(false);
+
+    /**
+     * 연락하기 모달 OPEN
+     */
     const handleContact = () => {
-      console.log('연락하기 모달 구현 필요');
+      isModalOpen.value = true;
     };
 
+    /**
+     * 연락하기 모달 CLOSE
+     */
+    const handleClose = () => {
+      isModalOpen.value = false;
+    };
+
+    /**
+     * 와이드 이미지 애니메이션
+     */
     const animateImage = () => {
       const timeline = gsap.timeline();
       timeline
@@ -96,7 +117,7 @@ export default {
       animateImage();
     });
 
-    return { handleContact, sectionRef, wideImgRef };
+    return { isModalOpen, handleContact, handleClose, sectionRef, wideImgRef };
   },
 };
 </script>
