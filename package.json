@@ -11,9 +11,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@tsparticles/vue3": "^3.0.1",
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "locomotive-scroll": "^4.1.4",
+    "tsparticles": "^3.5.0",
     "vue": "^3.4.29",
     "vue-easy-lightbox": "^1.19.0"
   },
