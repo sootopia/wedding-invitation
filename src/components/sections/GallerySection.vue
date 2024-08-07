@@ -96,7 +96,6 @@ export default {
       '/static/images/gallery13.webp',
       '/static/images/gallery14.webp',
       '/static/images/gallery15.webp',
-      '/static/images/gallery16.webp',
       '/static/images/gallery17.webp',
       '/static/images/gallery18.webp',
       '/static/images/gallery19.webp',
