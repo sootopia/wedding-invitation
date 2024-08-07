@@ -6,6 +6,8 @@ import { openAlert } from '@/plugins/alertPlugin';
 import VueEasyLightbox from 'vue-easy-lightbox';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Particles from '@tsparticles/vue3';
+import { loadFull } from 'tsparticles';
 
 const app = createApp(App);
 app.component('BaseButton', BaseButton);
@@ -15,5 +17,10 @@ app.use(
     duration: 1000,
   }),
 );
+app.use(Particles, {
+  init: async (engine) => {
+    await loadFull(engine);
+  },
+});
 app.config.globalProperties.$openAlert = openAlert;
 app.mount('#app');

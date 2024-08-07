@@ -1,5 +1,6 @@
 <template>
   <div>
+    <ConfettiParticles />
     <HeroSection />
     <InvitationSection />
     <GallerySection />
@@ -19,6 +20,7 @@ import CalendarSection from '@/components/sections/CalendarSection.vue';
 import LocationSection from '@/components/sections/LocationSection.vue';
 import AccountSection from '@/components/sections/AccountSection.vue';
 import FooterLayout from '@/components/FooterLayout.vue';
+import ConfettiParticles from '@/components/ConfettiParticles.vue';
 
 export default {
   components: {
@@ -29,6 +31,7 @@ export default {
     LocationSection,
     AccountSection,
     FooterLayout,
+    ConfettiParticles,
   },
   setup() {},
 };
