@@ -55,7 +55,9 @@
     </div>
 
     <Teleport to="body">
-      <ContactModal v-if="isModalOpen" @close="handleClose" />
+      <Transition name="modal-appear">
+        <ContactModal v-if="isModalOpen" @close="handleClose" />
+      </Transition>
     </Teleport>
   </section>
 </template>
@@ -165,5 +167,15 @@ export default {
       margin-left: 8px;
     }
   }
+}
+
+.modal-appear-enter-from,
+.modal-appear-leave-to {
+  opacity: 0;
+}
+
+.modal-appear-enter-active,
+.modal-appear-leave-active {
+  transition: opacity 0.3s ease;
 }
 </style>
