@@ -3,14 +3,14 @@
     <div class="container mx-auto px-5">
       <div class="greeting__text">
         <CommonHeader title="소중한 분들을 초대합니다" subtitle="INVITATION" />
-        <p>무더운 여름에 만난 저희,</p>
-        <p>가을에 결실을 맺습니다.</p>
-        <p>서로 믿어주고, 행복한 앞날을 소망하며,</p>
-        <p>사랑으로 살겠습니다.</p>
-        <p>부부로 인연을 맺는 자리에</p>
-        <p>소중한 분들을 모시고자 합니다.</p>
-        <p>따뜻한 사랑으로 저희 시작을 축복해 주시면</p>
-        <p>감사하겠습니다.</p>
+        <p data-aos="fade-up">무더운 여름에 만난 저희,</p>
+        <p data-aos="fade-up" data-aos-delay="50">가을에 결실을 맺습니다.</p>
+        <p data-aos="fade-up" data-aos-delay="100">서로 믿어주고, 행복한 앞날을 소망하며,</p>
+        <p data-aos="fade-up" data-aos-delay="150">사랑으로 살겠습니다.</p>
+        <p data-aos="fade-up" data-aos-delay="200">부부로 인연을 맺는 자리에</p>
+        <p data-aos="fade-up" data-aos-delay="250">소중한 분들을 모시고자 합니다.</p>
+        <p data-aos="fade-up" data-aos-delay="300">따뜻한 사랑으로 저희 시작을 축복해 주시면</p>
+        <p data-aos="fade-up" data-aos-delay="350">감사하겠습니다.</p>
       </div>
 
       <div class="hero__wrapper">
@@ -19,8 +19,12 @@
         </figure>
 
         <div class="hero__info">
-          <div><strong>박선영&middot;김창순</strong>의 차남 <span class="hero">박수현</span></div>
-          <div><strong>정운천&middot;신수경</strong>의 장녀 <span class="hero">정예솔</span></div>
+          <div data-aos="fade-up">
+            <strong>박선영&middot;김창순</strong>의 차남 <span class="hero">박수현</span>
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <strong>정운천&middot;신수경</strong>의 장녀 <span class="hero">정예솔</span>
+          </div>
         </div>
 
         <BaseButton variant="secondary" bold @click="handleContact">

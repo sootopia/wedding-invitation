@@ -49,25 +49,25 @@
       </div>
 
       <div class="countdown__container flex justify-center gap-[22px]">
-        <div class="countdown__item">
+        <div class="countdown__item" data-aos="fade-up">
           <span>DAYS</span>
           <div class="countdown__circle">{{ computedDatas[0] }}</div>
         </div>
-        <div class="countdown__item">
+        <div class="countdown__item" data-aos="fade-up" data-aos-delay="100">
           <span>HOUR</span>
           <div class="countdown__circle">{{ computedDatas[1] }}</div>
         </div>
-        <div class="countdown__item">
+        <div class="countdown__item" data-aos="fade-up" data-aos-delay="200">
           <span>MIN</span>
           <div class="countdown__circle">{{ computedDatas[2] }}</div>
         </div>
-        <div class="countdown__item">
+        <div class="countdown__item" data-aos="fade-up" data-aos-delay="300">
           <span>SEC</span>
           <div class="countdown__circle">{{ computedDatas[3] }}</div>
         </div>
       </div>
 
-      <p class="bottom__text" v-html="computedDatas[4]"></p>
+      <p class="bottom__text" v-html="computedDatas[4]" data-aos="fade-up"></p>
     </div>
   </section>
 </template>

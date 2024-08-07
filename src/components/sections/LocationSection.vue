@@ -3,8 +3,10 @@
     <div class="container mx-auto mb-6 px-5">
       <CommonHeader title="오시는 길" subtitle="LOCATION" />
       <div class="location__header">
-        <h3>메종 드 보네르 1F, 보네르 홀</h3>
-        <p>대전광역시 서구 한밭대로 797, 1층 <br />(둔산동, 캐피탈타워)</p>
+        <h3 data-aos="fade-up">메종 드 보네르 1F, 보네르 홀</h3>
+        <p data-aos="fade-up" data-aos-delay="100">
+          대전광역시 서구 한밭대로 797, 1층 <br />(둔산동, 캐피탈타워)
+        </p>
       </div>
     </div>
 
@@ -38,7 +40,7 @@
 
       <hr class="my-[30px] border-[#e9e9e9] border-dashed" />
 
-      <div class="info__group">
+      <div class="info__group" data-aos="fade-up">
         <h4>지하철</h4>
         <ul>
           <li class="pl-4">
@@ -52,9 +54,9 @@
         </ul>
       </div>
 
-      <hr class="my-[30px] border-[#e9e9e9] border-dashed" />
+      <hr class="my-[30px] border-[#e9e9e9] border-dashed" data-aos="fade-up" />
 
-      <div class="info__group">
+      <div class="info__group" data-aos="fade-up">
         <h4>버스</h4>
         <h5>둥지네거리(32430) 하차</h5>
         <ul>
@@ -97,9 +99,9 @@
         </ul>
       </div>
 
-      <hr class="my-[30px] border-[#e9e9e9] border-dashed" />
+      <hr class="my-[30px] border-[#e9e9e9] border-dashed" data-aos="fade-up" />
 
-      <div class="info__group">
+      <div class="info__group" data-aos="fade-up">
         <h4>자가용</h4>
         <p class="leading-6">
           명칭검색 : “메종드보네르" 검색 <br />주소검색 : 대전 서구 한밭대로 797
