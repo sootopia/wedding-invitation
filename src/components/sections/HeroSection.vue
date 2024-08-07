@@ -51,7 +51,7 @@ export default {
 <style lang="scss" scoped>
 .hero__section {
   position: relative;
-  padding-top: 60px;
+  padding-top: 80px;
 
   figure {
     position: relative;
