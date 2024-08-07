@@ -8,6 +8,7 @@
     <LocationSection />
     <AccountSection />
     <FooterLayout />
+    <MusicButton />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import LocationSection from '@/components/sections/LocationSection.vue';
 import AccountSection from '@/components/sections/AccountSection.vue';
 import FooterLayout from '@/components/FooterLayout.vue';
 import ConfettiParticles from '@/components/ConfettiParticles.vue';
+import MusicButton from '@/components/MusicButton.vue';
 
 export default {
   components: {
@@ -32,6 +34,7 @@ export default {
     AccountSection,
     FooterLayout,
     ConfettiParticles,
+    MusicButton,
   },
   setup() {},
 };
