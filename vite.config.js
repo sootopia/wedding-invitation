@@ -17,6 +17,7 @@ export default defineConfig({
         additionalData: `
           @import "@/assets/scss/_mixins";
           @import "@/assets/scss/_variables";
+          @import "@/assets/scss/_animations";
         `,
       },
     },
