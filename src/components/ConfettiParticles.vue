@@ -21,11 +21,11 @@ export default {
           size: true,
           speed: {
             min: 1,
-            max: 8,
+            max: 3,
           },
         },
         number: {
-          value: 400,
+          value: 200,
           density: {
             enable: true,
             area: 600,
