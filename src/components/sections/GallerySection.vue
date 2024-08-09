@@ -81,6 +81,8 @@ export default {
   },
   setup() {
     const galleryItems = [
+      '/static/images/gallery12.webp',
+      '/static/images/gallery13.webp',
       '/static/images/gallery01.webp',
       '/static/images/gallery02.webp',
       '/static/images/gallery03.webp',
@@ -92,8 +94,6 @@ export default {
       '/static/images/gallery09.webp',
       '/static/images/gallery10.webp',
       '/static/images/gallery11.webp',
-      '/static/images/gallery12.webp',
-      '/static/images/gallery13.webp',
       '/static/images/gallery14.webp',
       '/static/images/gallery15.webp',
       '/static/images/gallery17.webp',
