@@ -12,17 +12,14 @@
         <template #content>
           <div class="account__group" v-for="(item, i) of accountArray[0]" :key="i">
             <div class="flex items-center justify-between">
+              <p>{{ item.accountHolder }}</p>
+            </div>
+            <div class="flex items-center justify-between mt-1">
               <p>{{ item.accountBank }} {{ item.accountNumber }}</p>
               <BaseButton variant="gray" size="xs" medium @click="handleCopy(item.accountNumber)"
                 ><template #icon><img src="/static/images/button_icon_copy.svg" /></template
                 >복사</BaseButton
               >
-            </div>
-            <div class="flex items-center justify-between mt-[6px]">
-              <p>{{ item.accountHolder }}</p>
-              <BaseButton tagType="a" :href="item.kakaoLink" variant="kakao" size="xs" medium
-                ><template #icon><img src="/static/images/button_icon_kakaopay.svg" /></template
-              ></BaseButton>
             </div>
           </div>
         </template>
@@ -33,17 +30,14 @@
         <template #content>
           <div class="account__group" v-for="(item, i) of accountArray[1]" :key="i">
             <div class="flex items-center justify-between">
+              <p>{{ item.accountHolder }}</p>
+            </div>
+            <div class="flex items-center justify-between mt-1">
               <p>{{ item.accountBank }} {{ item.accountNumber }}</p>
               <BaseButton variant="gray" size="xs" medium @click="handleCopy(item.accountNumber)"
                 ><template #icon><img src="/static/images/button_icon_copy.svg" /></template
                 >복사</BaseButton
               >
-            </div>
-            <div class="flex items-center justify-between mt-[6px]">
-              <p>{{ item.accountHolder }}</p>
-              <BaseButton tagType="a" :href="item.kakaoLink" variant="kakao" size="xs" medium
-                ><template #icon><img src="/static/images/button_icon_kakaopay.svg" /></template
-              ></BaseButton>
             </div>
           </div>
         </template>
@@ -127,7 +121,7 @@ export default {
 
 <style lang="scss" scoped>
 .account__section {
-  padding-bottom: 80px;
+  padding-top: 80px;
 
   .notify__text {
     font-size: 15px;

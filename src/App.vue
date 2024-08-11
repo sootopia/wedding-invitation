@@ -3,17 +3,16 @@
     <ConfettiParticles />
     <HeroSection />
     <InvitationSection />
+    <AccountSection />
     <GallerySection />
     <CalendarSection />
     <LocationSection />
-    <AccountSection />
     <FooterLayout />
     <MusicButton />
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
 import HeroSection from '@/components/sections/HeroSection.vue';
 import InvitationSection from '@/components/sections/InvitationSection.vue';
 import GallerySection from '@/components/sections/GallerySection.vue';
