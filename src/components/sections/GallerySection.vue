@@ -67,8 +67,15 @@
     :visible="visibleRef"
     :imgs="galleryItems"
     :index="indexRef"
+    :zoomDisabled="true"
+    :pinchDisabled="true"
+    :moveDisabled="true"
+    :dblclickDisabled="true"
+    :rotateDisabled="true"
     @hide="closeLightbox"
-  />
+  >
+    <template v-slot:toolbar></template>
+  </vue-easy-lightbox>
 </template>
 
 <script>
