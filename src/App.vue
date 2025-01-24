@@ -1,47 +1,50 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div>
+    <ConfettiParticles />
+    <HeroSection />
+    <InvitationSection />
+    <AccountSection />
+    <GallerySection />
+    <CalendarSection />
+    <LocationSection />
+    <FooterLayout />
+    <MusicButton />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import HeroSection from '@/components/sections/HeroSection.vue';
+import InvitationSection from '@/components/sections/InvitationSection.vue';
+import GallerySection from '@/components/sections/GallerySection.vue';
+import CalendarSection from '@/components/sections/CalendarSection.vue';
+import LocationSection from '@/components/sections/LocationSection.vue';
+import AccountSection from '@/components/sections/AccountSection.vue';
+import FooterLayout from '@/components/FooterLayout.vue';
+import ConfettiParticles from '@/components/ConfettiParticles.vue';
+import MusicButton from '@/components/MusicButton.vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  components: {
+    HeroSection,
+    InvitationSection,
+    GallerySection,
+    CalendarSection,
+    LocationSection,
+    AccountSection,
+    FooterLayout,
+    ConfettiParticles,
+    MusicButton,
+  },
+  setup() {},
+};
+</script>
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+<style lang="scss">
+#app {
+  position: relative;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $white;
 }
 </style>
